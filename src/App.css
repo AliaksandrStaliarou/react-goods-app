@@ -30,3 +30,168 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: arial, sans-serif;
+}
+
+.itemsList {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+.itemContainer {
+    width: 100%;
+}
+
+.item {
+    position: relative;
+    margin: 10px 0;
+    width: 50%;
+    background: aliceblue;
+}
+
+.item:hover {
+    background: lightblue;
+}
+
+.item:hover .item_imgAndTitle button {
+    display: block;
+
+}
+
+.item img {
+    display: block;
+}
+
+.item_imgAndTitle {
+    display: flex;
+}
+
+.item_imgAndTitle > p {
+   padding: 20px 0 0 35px;
+}
+
+.item_imgAndTitle button {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    vertical-align: top;
+    height: 30px;
+    padding: 0 50px;
+    border: 1px solid #c9c9c9;
+    background: rgba(255,255,255,.7);
+    font: 0.75em tahoma, arial, sans-serif;
+    cursor: pointer;
+}
+
+.item_imgAndTitle button:hover {
+    background: rgba(255,255,255,.9);
+}
+
+.item > p {
+    padding: 10px 0 10px 10px;
+}
+
+.item_priceAndBasket {
+    display: flex;
+}
+
+.itemExp {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    background: aliceblue;
+}
+
+.itemExp figure {
+    width: 100%;
+}
+
+.itemExp img {
+    display: block;
+    width: 100%;
+}
+
+.itemExp_imgAndPrice {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.item_imgAndPrice p {
+    padding: 15px 0 0 25px;
+    font-size: 1.5em;
+}
+
+
+.itemExp_titleAndDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    width: 40%;
+    padding-right: 15px;
+}
+
+.itemExp_titleAndDescription  a {
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: 13px;
+    font-size: 60px;
+    font-weight: 100;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(200,200,200,1);
+}
+
+.itemExp_titleAndDescription  a:hover {
+    color: rgba(150,150,150, 1);
+}
+
+.itemExp_titleAndDescription > p:nth-child(2) {
+    padding: 15px 0 30px 0;
+    font-size: 1.5em;
+}
+
+.itemExp_titleAndDescription > p:last-child {
+    font-size: 1.5em;
+}
+
+.itemExp_titleAndDescription div p {
+    padding: 10px 0;
+}
+
+.itemExp_titleAndDescription div p + p {
+    font-size: 1em;
+}
+
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+
+
+
