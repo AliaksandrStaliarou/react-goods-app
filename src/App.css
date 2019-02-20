@@ -38,14 +38,65 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    background-size: auto;
     font-size: 16px;
     font-family: arial, sans-serif;
 }
 
-.itemsList {
+.itemsListAndFilter {
+    margin: 20px auto;
     display: flex;
-    flex-direction: column;
-    margin-left: 15%;
+    justify-content: center;
+}
+
+.filterContainer {
+    margin-right: 1%;
+    width: 16%;
+    border-right: 1px solid #ddd;
+}
+
+.filterContainer_clothes p,
+.filterContainer_price p {
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.filterContainer_clothes li {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.filterContainer_clothes li input {
+    width: auto;
+}
+
+.filterContainer_clothes span {
+    padding-left: 10px;
+}
+
+.filterContainer_clothes label,
+.filterContainer_clothes input {
+    cursor: pointer;
+}
+
+.filterContainer_price div {
+    padding: 10px 0;
+}
+
+
+.itemsList {
+    margin-left: 2%;
+    width: 40%;
+}
+
+.filterContainer input {
+    width: 90px;
 }
 
 .itemContainer {
@@ -55,17 +106,15 @@
 .item {
     position: relative;
     margin: 10px 0;
-    width: 50%;
     background: aliceblue;
 }
 
 .item:hover {
-    background: lightblue;
+    background: #d5eaf6;
 }
 
 .item:hover .item_imgAndTitle button {
     display: block;
-
 }
 
 .item img {
@@ -78,6 +127,11 @@
 
 .item_imgAndTitle > p {
    padding: 20px 0 0 35px;
+}
+
+.item >:last-child {
+    color: #ff48a5;
+    font-weight: bold;
 }
 
 .item_imgAndTitle button {
@@ -107,10 +161,14 @@
 }
 
 .itemExp {
+    position: absolute;
+    top: 15%;
+    left: 17%;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 65%;
     background: aliceblue;
+    z-index: 2;
 }
 
 .itemExp figure {
@@ -179,7 +237,7 @@
 
 .overlay {
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
@@ -188,7 +246,6 @@
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
 }
 
 
