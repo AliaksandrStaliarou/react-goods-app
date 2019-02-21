@@ -76,9 +76,9 @@ class ItemsList extends React.Component {
             return <ItemGoodsSmall data={item} />
         })
         return(
-            <React.Fragment>
+            <div className="itemsList">
                 {goodsList}
-            </React.Fragment>
+            </div>
         )
     }
 }
