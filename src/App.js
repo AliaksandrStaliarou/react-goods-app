@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -14,7 +13,7 @@ let goods = [
         type: 'shirt',
         title: 'Рубашка, Envy Lab 123',
         image: './images/shirt1_sm.jpg',
-        bigImage: './images/shirt1_big.jpg',
+        bigImage: '/images/shirt1_big.jpg',
         price: 'цена: 10 рублей',
         priseNum: 10,
         extraInfo: textFish,
@@ -47,10 +46,19 @@ let goods = [
 ]
 
 
+/*class ProductItem extends React.Component {
+    render() {
+        return(
+
+        )
+    }
+}*/
+
+
 
 
 // <img src={require('./images/shirt1_sm.jpg')} alt=""/>
-class ItemGoodsSmall extends React.Component {
+class ProductItemSmall extends React.Component {
     render() {
         let item = this.props.data
         return(
@@ -58,7 +66,7 @@ class ItemGoodsSmall extends React.Component {
                 <div className="item" >
                     <div className="item_imgAndTitle">
                         <figure>
-                            <img src='' alt=""/>
+                            <img src={item.image} alt=""/>
                         </figure>
                         <p>{item.title}</p>
                         <button onClick={this.expanderAndOverlayer}>Подробнее</button>
@@ -70,10 +78,54 @@ class ItemGoodsSmall extends React.Component {
     }
 }
 
+
+class ProductItemBig extends React.Component {
+    state = {
+        expanded: false,
+        available: true,
+
+    }
+    render() {
+        let available = this.state.available
+        let item = this.props.data
+        return (
+            <div className="itemExp">
+                <div className="itemExp_imgAndPrice">
+                    <figure>
+                        <img src='' alt=""/>
+                    </figure>
+                </div>
+                <div className="itemExp_titleAndDescription">
+                    <a href="#" onClick={() => {
+                        this.props.condition(this.state.expanded)
+                        this.props.overlaySwitcher(this.state.class)
+                    }}>x</a>
+                    <p>{item.title}</p>
+                    <div>
+                        <p>Краткое описание</p>
+                        <p>{item.extraInfo}</p>
+                    </div>
+                    {available == true ?
+                        <p style={{fontSize: "1.2em", color: "green"}}>В наличии</p> :
+                        <p style={{fontSize: "1.2em", color: "red"}}>Под заказ</p>
+                    }
+                    <p>{item.price}</p>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+
+
 class ItemsList extends React.Component {
     render() {
         let goodsList = this.props.data.map(function(item) {
-            return <ItemGoodsSmall data={item} />
+            return <ProductItemSmall key={item.id} data={item} />
+        })
+        let goodsListExpanded = this.props.data.map(function(item) {
+            return <ProductItemBig key={item.id} data={item} />
         })
         return(
             <div className="itemsList">
@@ -175,7 +227,7 @@ class Shirt1 extends React.Component {
                     <div className="item" >
                         <div className="item_imgAndTitle">
                             <figure>
-                                <img src={require('./images/shirt1_sm.jpg')} alt=""/>
+                                <img src='' alt=""/>
                             </figure>
                             <p>Рубашка, Envy Lab 123</p>
                             <button onClick={this.expanderAndOverlayer}>Подробнее</button>
@@ -199,7 +251,7 @@ class Shirt1Exp extends React.Component {
             <div className="itemExp">
                 <div className="itemExp_imgAndPrice">
                     <figure>
-                        <img src={require('./images/shirt1_big.jpg')} alt=""/>
+                        <img src='' alt=""/>
                     </figure>
                 </div>
                 <div className="itemExp_titleAndDescription">
@@ -229,7 +281,7 @@ class Shirt1Exp extends React.Component {
 
 
 
-class ShirtEnvyLab456 extends React.Component {
+/*class ShirtEnvyLab456 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -316,9 +368,9 @@ class Shirt1Exp456 extends React.Component {
             </div>
         )
     }
-}
+}*/
 
-class ShirtEnvyLab789 extends React.Component {
+/*class ShirtEnvyLab789 extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -405,9 +457,9 @@ class Shirt1Exp789 extends React.Component {
             </div>
         )
     }
-}
+}*/
 
-
+/*
 class Jeans511 extends React.Component {
     constructor(props) {
         super(props)
@@ -496,6 +548,7 @@ class JeansExpanded511 extends React.Component {
         )
     }
 }
+*/
 
 
 
