@@ -46,19 +46,38 @@ let goods = [
 ]
 
 
-/*class ProductItem extends React.Component {
-    render() {
-        return(
-
-        )
+class ProductItem extends React.Component {
+    state = {
+        expanded: false,
     }
-}*/
+    onClickFromSmallToBig = (status) => {
+        this.setState({expanded: status})
+    }
+    render() {
+        let expanded = this.state.expanded
+        if (expanded == false) {
+            return(
+                <ProductItemSmall data={this.props.data} condition={this.onClickFromSmallToBig} />
+            )
+        } else {
+            return(
+                <ProductItemBig data={this.props.data} condition={this.onClickFromSmallToBig} />
+            )
+        }
+    }
+}
 
 
 
 
 // <img src={require('./images/shirt1_sm.jpg')} alt=""/>
 class ProductItemSmall extends React.Component {
+    state = {
+        expanded: true,
+    }
+    onClickFromSmallToBig_And_Overlayer = () => {
+        this.props.condition(this.state.expanded)
+    }
     render() {
         let item = this.props.data
         return(
@@ -69,7 +88,7 @@ class ProductItemSmall extends React.Component {
                             <img src={item.image} alt=""/>
                         </figure>
                         <p>{item.title}</p>
-                        <button onClick={this.expanderAndOverlayer}>Подробнее</button>
+                        <button onClick={this.onClickFromSmallToBig_And_Overlayer}>Подробнее</button>
                     </div>
                     <p>{item.price}</p>
                 </div>
@@ -83,6 +102,7 @@ class ProductItemBig extends React.Component {
     state = {
         expanded: false,
         available: true,
+        class: 'overlay',
 
     }
     render() {
@@ -92,7 +112,7 @@ class ProductItemBig extends React.Component {
             <div className="itemExp">
                 <div className="itemExp_imgAndPrice">
                     <figure>
-                        <img src='' alt=""/>
+                        <img src={item.bigImage} alt=""/>
                     </figure>
                 </div>
                 <div className="itemExp_titleAndDescription">
@@ -121,15 +141,15 @@ class ProductItemBig extends React.Component {
 
 class ItemsList extends React.Component {
     render() {
-        let goodsList = this.props.data.map(function(item) {
-            return <ProductItemSmall key={item.id} data={item} />
+        let productList = this.props.data.map(function(item) {
+            return <ProductItem key={item.id} data={item} />
         })
         let goodsListExpanded = this.props.data.map(function(item) {
             return <ProductItemBig key={item.id} data={item} />
         })
         return(
             <div className="itemsList">
-                {goodsList}
+                {productList}
             </div>
         )
     }
@@ -279,276 +299,6 @@ class Shirt1Exp extends React.Component {
 }
 
 
-
-
-/*class ShirtEnvyLab456 extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            expanded: false,
-        }
-    }
-    onClickOpenCloseGoods = (status) => {
-        this.setState({ expanded: status})
-    }
-    render() {
-        let expanded = this.state.expanded
-        if (expanded == false) {
-            return (
-                <Shirt456 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher} />
-            )
-        } else {
-            return (
-                <Shirt1Exp456 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher}/>
-            )
-        }
-    }
-}
-class Shirt456 extends React.Component {
-    state = {
-        expanded: true,
-        class: 'overlay',
-    }
-    expanderAndOverlayer = () => {
-        this.props.condition(this.state.expanded)
-        this.props.overlaySwitcher(this.state.class)
-    }
-    render() {
-        return (
-            <div className="itemContainer">
-                <div className="item" >
-                    <div className="item_imgAndTitle">
-                        <figure>
-                            <img src={require('./images/shirt2_sm.jpg')} alt=""/>
-                        </figure>
-                        <p>Рубашка, Envy Lab 456</p>
-                        <button onClick={this.expanderAndOverlayer}>Подробнее</button>
-                    </div>
-                    <p>цена: 15 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}
-class Shirt1Exp456 extends React.Component {
-    state = {
-        expanded: false,
-        available: true,
-        class: '',
-
-    }
-    render() {
-        let available = this.state.available
-        return (
-            <div className="itemExp">
-                <div className="itemExp_imgAndPrice">
-                    <figure>
-                        <img src={require('./images/shirt2_big.jpg')} alt=""/>
-                    </figure>
-                </div>
-                <div className="itemExp_titleAndDescription">
-                    <a href="#" onClick={() => {
-                        this.props.condition(this.state.expanded)
-                        this.props.overlaySwitcher(this.state.class)
-                    }}>x</a>
-                    <p>Рубашка, Envy Lab 456</p>
-                    <div>
-                        <p>Краткое описание</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    {available == true ?
-                        <p style={{fontSize: "1.2em", color: "green"}}>В наличии</p> :
-                        <p style={{fontSize: "1.2em", color: "red"}}>Под заказ</p>
-                    }
-                    <p>цена: 15 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}*/
-
-/*class ShirtEnvyLab789 extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            expanded: false,
-        }
-    }
-    onClickOpenCloseGoods = (status) => {
-        this.setState({ expanded: status})
-    }
-    render() {
-        let expanded = this.state.expanded
-        if (expanded == false) {
-            return (
-                <Shirt789 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher} />
-            )
-        } else {
-            return (
-                <Shirt1Exp789 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher}/>
-            )
-        }
-    }
-}
-class Shirt789 extends React.Component {
-    state = {
-        expanded: true,
-        class: 'overlay',
-    }
-    expanderAndOverlayer = () => {
-        this.props.condition(this.state.expanded)
-        this.props.overlaySwitcher(this.state.class)
-    }
-    render() {
-        return (
-            <div className="itemContainer">
-                <div className="item" >
-                    <div className="item_imgAndTitle">
-                        <figure>
-                            <img src={require('./images/shirt3_sm.jpg')} alt=""/>
-                        </figure>
-                        <p>Рубашка, Envy Lab 789</p>
-                        <button onClick={this.expanderAndOverlayer}>Подробнее</button>
-                    </div>
-                    <p>цена: 20 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}
-class Shirt1Exp789 extends React.Component {
-    state = {
-        expanded: false,
-        available: true,
-        class: '',
-
-    }
-    render() {
-        let available = this.state.available
-        return (
-            <div className="itemExp">
-                <div className="itemExp_imgAndPrice">
-                    <figure>
-                        <img src={require('./images/shirt3_big.jpg')} alt=""/>
-                    </figure>
-                </div>
-                <div className="itemExp_titleAndDescription">
-                    <a href="#" onClick={() => {
-                        this.props.condition(this.state.expanded)
-                        this.props.overlaySwitcher(this.state.class)
-                    }}>x</a>
-                    <p>Рубашка, Envy Lab 789</p>
-                    <div>
-                        <p>Краткое описание</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    {available == true ?
-                        <p style={{fontSize: "1.2em", color: "green"}}>В наличии</p> :
-                        <p style={{fontSize: "1.2em", color: "red"}}>Под заказ</p>
-                    }
-                    <p>цена: 20 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}*/
-
-/*
-class Jeans511 extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            expanded: false,
-        }
-    }
-    onClickOpenCloseGoods = (status) => {
-        this.setState({ expanded: status})
-    }
-    render() {
-        let expanded = this.state.expanded
-        if (expanded == false) {
-            return (
-                <JeansCompacted511 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher} />
-            )
-        } else {
-            return (
-                <JeansExpanded511 condition={this.onClickOpenCloseGoods} overlaySwitcher={this.props.overlaySwitcher}/>
-            )
-        }
-    }
-}
-class JeansCompacted511 extends React.Component {
-    state = {
-        expanded: true,
-        class: 'overlay',
-    }
-    expanderAndOverlayer = () => {
-        this.props.condition(this.state.expanded)
-        this.props.overlaySwitcher(this.state.class)
-    }
-    render() {
-        return (
-            <div className="itemContainer">
-                <div className="item" >
-                    <div className="item_imgAndTitle">
-                        <figure>
-                            <img src={require('./images/jeans1_sm.jpg')} alt=""/>
-                        </figure>
-                        <p>Джинсы, 511</p>
-                        <button onClick={this.expanderAndOverlayer}>Подробнее</button>
-                    </div>
-                    <p>цена: 50 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}
-class JeansExpanded511 extends React.Component {
-    state = {
-        expanded: false,
-        available: true,
-        class: '',
-
-    }
-    render() {
-        let available = this.state.available
-        return (
-            <div className="itemExp">
-                <div className="itemExp_imgAndPrice">
-                    <figure>
-                        <img src={require('./images/jeans1_big.jpg')} alt=""/>
-                    </figure>
-                </div>
-                <div className="itemExp_titleAndDescription">
-                    <a href="#" onClick={() => {
-                        this.props.condition(this.state.expanded)
-                        this.props.overlaySwitcher(this.state.class)
-                    }}>x</a>
-                    <p>РДжинсы, 511</p>
-                    <div>
-                        <p>Краткое описание</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    {available == true ?
-                        <p style={{fontSize: "1.2em", color: "green"}}>В наличии</p> :
-                        <p style={{fontSize: "1.2em", color: "red"}}>Под заказ</p>
-                    }
-                    <p>цена: 50 рублей</p>
-                </div>
-            </div>
-        )
-    }
-}
-*/
 
 
 
