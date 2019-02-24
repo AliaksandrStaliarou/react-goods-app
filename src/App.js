@@ -71,6 +71,7 @@ class ProductItem extends React.Component {
 
 
 // <img src={require('./images/shirt1_sm.jpg')} alt=""/>
+//
 class ProductItemSmall extends React.Component {
     state = {
         expanded: true,
