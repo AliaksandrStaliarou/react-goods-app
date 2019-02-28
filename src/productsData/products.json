@@ -1,0 +1,103 @@
+[
+  {
+    "id": 1,
+    "type": "shirt",
+    "title": "Рубашка, Envy Lab 123",
+    "image": "./images/shirt1_sm.jpg",
+    "bigImage": "/images/shirt1_big.jpg",
+    "price": "цена: 60 рублей",
+    "priseNum": 60,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": true
+  },
+  {
+    "id": 2,
+    "type": "shirt",
+    "title": "Рубашка, Envy Lab 456",
+    "image": "./images/shirt2_sm.jpg",
+    "bigImage": "./images/shirt2_big.jpg",
+    "price": "цена: 86 рублей",
+    "priseNum": 86,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": false
+  },
+  {
+    "id": 3,
+    "type": "shirt",
+    "title": "Рубашка, Envy Lab 789",
+    "image": "./images/shirt3_sm.jpg",
+    "bigImage": "./images/shirt3_big.jpg",
+    "price": "цена: 72 рублей",
+    "priseNum": 72,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": true
+  },
+  {
+    "id": 4,
+    "type": "jeans",
+    "title": "Джинсы 1",
+    "image": "./images/jeans1_sm.jpg",
+    "bigImage": "./images/jeans1_big.jpg",
+    "price": "цена: 100 рублей",
+    "priseNum": 100,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": true
+  },
+  {
+    "id": 5,
+    "type": "jeans",
+    "title": "Джинсы 2",
+    "image": "./images/jeans2_sm.jpg",
+    "bigImage": "./images/jeans2_big.jpg",
+    "price": "цена: 120 рублей",
+    "priseNum": 120,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": false
+  },
+  {
+    "id": 6,
+    "type": "jeans",
+    "title": "Джинсы 3",
+    "image": "./images/jeans3_sm.jpg",
+    "bigImage": "./images/jeans3_big.jpg",
+    "price": "цена: 105 рублей",
+    "priseNum": 105,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": false
+  },
+  {
+    "id": 7,
+    "type": "suit",
+    "title": "Костюм 1",
+    "image": "./images/suit1_sm.jpg",
+    "bigImage": "./images/suit1_big.jpg",
+    "price": "цена: 320 рублей",
+    "priseNum": 320,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": true
+  },
+  {
+    "id": 8,
+    "type": "suit",
+    "title": "Костюм 2",
+    "image": "./images/suit2_sm.jpg",
+    "bigImage": "./images/suit2_big.jpg",
+    "price": "цена: 390 рублей",
+    "priseNum": 390,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": false
+  },
+  {
+    "id": 9,
+    "type": "suit",
+    "title": "Костюм 3",
+    "image": "./images/suit3_sm.jpg",
+    "bigImage": "./images/suit3_big.jpg",
+    "price": "цена: 410 рублей",
+    "priseNum": 410,
+    "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "available": true
+  }
+
+
+]

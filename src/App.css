@@ -201,7 +201,7 @@ body {
     padding-right: 15px;
 }
 
-.itemExp_titleAndDescription  a {
+.itemExp_titleAndDescription > p:first-child {
     display: block;
     position: absolute;
     top: -15px;
@@ -213,7 +213,7 @@ body {
     color: rgba(200,200,200,1);
 }
 
-.itemExp_titleAndDescription  a:hover {
+.itemExp_titleAndDescription > p:first-child:hover {
     color: rgba(150,150,150, 1);
 }
 
