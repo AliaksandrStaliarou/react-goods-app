@@ -16,33 +16,23 @@ class Overlay extends React.Component {
 class ItemsListAndFilterMenu extends React.Component {
     state = {
         data: products,
-        data2: products,
-        jeansChecked: false,
+        data2: products.slice(),
+        checked: false,
     }
 
     jeansFilterer = () => {
-        if (this.state.jeansChecked === false) {
-            this.setState({jeansChecked: true})
-        } else {
-            this.setState({jeansChecked: false})
-        }
+        this.setState({checked: !this.state.checked})
+        if (this.state.checked === false) {
+            let arr = this.state.data.filter(function (item) {
+                return item.type === 'jeans'
+            })
+            this.setState({data: arr})
 
-        if (this.state.jeansChecked === false) {
-            let arr = []
-            this.state.data.filter(function (item) {
-                if (item.type === 'jeans') {
-                    arr.push(item)
-                    this.setState({data: arr})
-                }
-            }.bind(this))
         } else {
-            let arr2 = []
-            this.state.data2.filter(function (item) {
-                if (item.type !== '') {
-                    arr2.push(item)
-                    this.setState({data: arr2})
-                }
-            }.bind(this))
+            let arr2 = this.state.data2.filter(function (item) {
+                return (item.type !== '')
+            })
+            this.setState({data: arr2})
         }
     }
     render() {
