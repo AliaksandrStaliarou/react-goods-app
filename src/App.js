@@ -16,44 +16,35 @@ class Overlay extends React.Component {
 class ItemsListAndFilterMenu extends React.Component {
     state = {
         data: products,
+        data2: products,
         jeansChecked: false,
     }
 
-    allGoods = () => {
-        this.setState({data: products})
-    }
-
     jeansFilterer = () => {
-        let qwe = this.state.data
         if (this.state.jeansChecked === false) {
             this.setState({jeansChecked: true})
         } else {
             this.setState({jeansChecked: false})
         }
 
-        let arr = []
-        this.state.data.filter(function (item) {
-            if (item.type === 'jeans') {
-                arr.push(item)
-                this.setState({data: arr})
-            } else  {
-                //this.setState({data: qwe})
-            }
-
-        }.bind(this))
-
+        if (this.state.jeansChecked === false) {
+            let arr = []
+            this.state.data.filter(function (item) {
+                if (item.type === 'jeans') {
+                    arr.push(item)
+                    this.setState({data: arr})
+                }
+            }.bind(this))
+        } else {
+            let arr2 = []
+            this.state.data2.filter(function (item) {
+                if (item.type !== '') {
+                    arr2.push(item)
+                    this.setState({data: arr2})
+                }
+            }.bind(this))
+        }
     }
-
-       /* let arr = []
-        this.state.data.filter(function (item) {
-            if (this.state.jeansChecked === true && item.type === 'jeans') {
-                arr.push(item)
-                this.setState({data: arr})
-            } else if (this.state.jeansChecked === false) {
-                this.setState({data: qwe})
-            }
-        }.bind(this))*/
-
     render() {
         return (
             <div className="itemsListAndFilter">
@@ -227,7 +218,7 @@ class App extends Component {
     return (
         <React.Fragment>
             <Overlay class={this.state.class}/>
-            <ItemsListAndFilterMenu overlaySwitcher={this.overlaySwitcher} />
+            <ItemsListAndFilterMenu overlaySwitcher={this.overlaySwitcher} data={this.state.data}/>
         </React.Fragment>
 
 
