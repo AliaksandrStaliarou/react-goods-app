@@ -19,7 +19,6 @@ class ItemsListAndFilterMenu extends React.Component {
         data2: products.slice(),
         checked: false,
     }
-
     jeansFilterer = () => {
         this.setState({checked: !this.state.checked})
         if (this.state.checked === false) {
