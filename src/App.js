@@ -17,11 +17,14 @@ class ItemsListAndFilterMenu extends React.Component {
     state = {
         data: products,
         data2: products.slice(),
-        checked: false,
+        jchecked: false,
     }
-    jeansFilterer = () => {
-        this.setState({checked: !this.state.checked})
-        if (this.state.checked === false) {
+
+    jeansFilterer = (event) => {
+       /* let qweqwe = this.state.data.slice(0)
+        console.log(qweqwe)*/
+        this.setState({jchecked: !this.state.jchecked})
+        if (this.state.jchecked === false) {
             let arr = this.state.data.filter(function (item) {
                 return item.type === 'jeans'
             })
@@ -69,7 +72,7 @@ class FilterMenu extends React.Component {
                         </li>
                         <li>
                             <label htmlFor="sweaters">
-                                <input type="checkbox" id="shirts"/>
+                                <input type="checkbox" id="shirts" onChange={this.onInputCheckedJeans}/>
                                 <span>Рубашки</span>
                             </label>
                         </li>
