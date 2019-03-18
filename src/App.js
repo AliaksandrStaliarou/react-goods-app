@@ -21,8 +21,7 @@ class ItemsListAndFilterMenu extends React.Component {
     }
 
     jeansFilterer = (event) => {
-       /* let qweqwe = this.state.data.slice(0)
-        console.log(qweqwe)*/
+        /***********/
         this.setState({jchecked: !this.state.jchecked})
         if (this.state.jchecked === false) {
             let arr = this.state.data.filter(function (item) {
