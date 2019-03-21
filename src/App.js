@@ -18,10 +18,14 @@ class ItemsListAndFilterMenu extends React.Component {
         data: products,
         data2: products.slice(),
         jchecked: false,
+        types: [],
     }
 
-    jeansFilterer = (event) => {
-        /***********/
+
+    onFilterChange = () => {
+        alert('qweqwe')
+    }
+    /*jeansFilterer = (event) => {
         this.setState({jchecked: !this.state.jchecked})
         if (this.state.jchecked === false) {
             let arr = this.state.data.filter(function (item) {
@@ -35,11 +39,11 @@ class ItemsListAndFilterMenu extends React.Component {
             })
             this.setState({data: arr2})
         }
-    }
+    }*/
     render() {
         return (
             <div className="itemsListAndFilter">
-                <FilterMenu jFilter={this.jeansFilterer}/>
+                <FilterMenu jFilter={this.jeansFilterer} filter={this.onFilterChange}/>
                 <ItemsList data={this.state.data} overlaySwitcher={this.props.overlaySwitcher}/>
             </div>
         )
@@ -48,33 +52,40 @@ class ItemsListAndFilterMenu extends React.Component {
 
 
 class FilterMenu extends React.Component {
-    onInputCheckedJeans = () => {
-        this.props.jFilter()
+    onFilterChange = () => {
+        this.props.filter()
     }
     render() {
+        let filter = this.onFilterChange
+        const TYPES = [
+            {
+                type: 'Джинсы',
+            },
+            {
+                type: 'Рубашки',
+            },
+            {
+                type: 'Костюмы',
+            },
+        ]
+        let goodsTemplate = TYPES.map(function(item) {
+            return(
+                <React.Fragment>
+                    <li>
+                        <label htmlFor="jeans">
+                            <input type="checkbox" id="jeans" onChange={filter}/>
+                            <span>{item.type}</span>
+                        </label>
+                    </li>
+                </React.Fragment>
+            )
+        })
         return (
             <div className="filterContainer">
                 <div className="filterContainer_clothes">
                     <p>Одежда</p>
                     <ul>
-                        <li>
-                            <label htmlFor="jeans">
-                                <input type="checkbox" id="jeans" onChange={this.onInputCheckedJeans}/>
-                                <span>Джинсы</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label htmlFor="suits">
-                                <input type="checkbox" id="suits"/>
-                                <span>Костюмы</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label htmlFor="sweaters">
-                                <input type="checkbox" id="shirts" onChange={this.onInputCheckedJeans}/>
-                                <span>Рубашки</span>
-                            </label>
-                        </li>
+                        {goodsTemplate}
                     </ul>
                 </div>
                 <div className="filterContainer_price">
