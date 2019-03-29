@@ -24,8 +24,8 @@ class ItemsListAndFilterMenu extends React.Component {
 
     onFilterChange = (datas) => {
         let arr = this.state.data.filter(item => {
-            let qwe = datas.join()
-            return item.type === qwe
+           // let qwe = datas.join()
+            return item.type === datas
         });
         this.setState({data: arr});
     };
@@ -62,7 +62,7 @@ class FilterMenu extends React.Component {
     };
     onSearchFilterChange = (event) => {
         this.setState({query: event.currentTarget.value});
-        this.props.filter(this.state.query)
+        this.props.filter(this.state)
     };
     onClothesFilterChange = (item) => {
         let type = this.state.type;
@@ -73,7 +73,7 @@ class FilterMenu extends React.Component {
             type.splice(index, 1);
         }
         this.setState({type: type});
-        this.props.filter(this.state.type)
+        this.props.filter(this.state)
     };
     render() {
         const TYPES = [
