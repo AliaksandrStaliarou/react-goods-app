@@ -22,9 +22,13 @@ class ItemsListAndFilterMenu extends React.Component {
     }
 
 
-    onFilterChange = () => {
-        alert('qweqwe')
-    }
+    onFilterChange = (datas) => {
+        let arr = this.state.data.filter(item => {
+            let qwe = datas.join()
+            return item.type === qwe
+        });
+        this.setState({data: arr});
+    };
     /*jeansFilterer = (event) => {
         this.setState({jchecked: !this.state.jchecked})
         if (this.state.jchecked === false) {
@@ -52,40 +56,60 @@ class ItemsListAndFilterMenu extends React.Component {
 
 
 class FilterMenu extends React.Component {
-    onFilterChange = () => {
-        this.props.filter()
-    }
+    state = {
+        query: '',
+        type: [],
+    };
+    onSearchFilterChange = (event) => {
+        this.setState({query: event.currentTarget.value});
+        this.props.filter(this.state.query)
+    };
+    onClothesFilterChange = (item) => {
+        let type = this.state.type;
+        if (type.indexOf(item) === -1) {
+            type.push(item);
+        } else {
+            let index = type.indexOf(item);
+            type.splice(index, 1);
+        }
+        this.setState({type: type});
+        this.props.filter(this.state.type)
+    };
     render() {
-        let filter = this.onFilterChange
         const TYPES = [
             {
-                type: 'Джинсы',
+                type: 'jeans',
+                label: 'Джинсы'
             },
             {
-                type: 'Рубашки',
+                type: 'shirt',
+                label: 'Рубашки'
             },
             {
-                type: 'Костюмы',
+                type: 'suit',
+                label: 'Костюмы'
             },
         ]
-        let goodsTemplate = TYPES.map(function(item) {
+        let typeCheckboxList = TYPES.map(item => {
             return(
-                <React.Fragment>
-                    <li>
-                        <label htmlFor="jeans">
-                            <input type="checkbox" id="jeans" onChange={filter}/>
-                            <span>{item.type}</span>
-                        </label>
-                    </li>
-                </React.Fragment>
+                <li>
+                    <label htmlFor={item.type}>
+                        <input type="checkbox" id={item.type}
+                               onChange={e => this.onClothesFilterChange(item.type) }/>
+                        <span>{item.label}</span>
+                    </label>
+                </li>
             )
         })
         return (
             <div className="filterContainer">
+                <div className="searchInput">
+                    <input type="text" placeholder="Поиск" onChange={this.onSearchFilterChange}/>
+                </div>
                 <div className="filterContainer_clothes">
                     <p>Одежда</p>
                     <ul>
-                        {goodsTemplate}
+                        {typeCheckboxList}
                     </ul>
                 </div>
                 <div className="filterContainer_price">
