@@ -95,9 +95,20 @@ body {
     width: 40%;
 }
 
+
 .filterContainer input {
     width: 90px;
 }
+
+.searchInput {
+    padding: 10px 0;
+}
+
+.searchInput input {
+    width: 180px;
+    padding: 5px 0;
+}
+
 
 .itemContainer {
     width: 100%;
