@@ -7,8 +7,12 @@ class FilterMenu extends React.Component {
         type: [],
     };
     onSearchFilterChange = (event) => {
-        this.setState({query: event.currentTarget.value});
-        this.props.filter(this.state)
+        //this.setState({query: event.currentTarget.value});
+        this.setState({
+            query: event.currentTarget.value
+        }, () => {
+            this.props.filter(this.state)
+        })
     };
     onClothesFilterChange = (item) => {
         let type = this.state.type;
@@ -35,7 +39,7 @@ class FilterMenu extends React.Component {
                 type: 'suit',
                 label: 'Костюмы'
             },
-        ]
+        ];
         let typeCheckboxList = TYPES.map(item => {
             return(
                 <li>
@@ -46,7 +50,7 @@ class FilterMenu extends React.Component {
                     </label>
                 </li>
             )
-        })
+        });
         return (
             <div className="filterContainer">
                 <div className="searchInput">
