@@ -18,11 +18,10 @@ class ItemsListAndFilterMenu extends React.Component {
             if (types.length === 0 && query === '') {
                 return true
             }
-            else if (types.indexOf(item.type) !== -1 || item.title.toLowerCase().indexOf(query) !== -1) {
-                return true
-            } else {
-                return false
-            }
+            let isTypeMatching = types.indexOf(item.type) !== -1;
+            let isQueryMatching = query.length > 0 && item.title.toLowerCase().indexOf(query) !== -1;
+
+            return isQueryMatching || isTypeMatching;
         });
         this.setState({filteredData: filteredTypes})
     };

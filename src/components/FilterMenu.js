@@ -5,6 +5,10 @@ class FilterMenu extends React.Component {
     state = {
         query: '',
         type: [],
+        price: {
+            from: null,
+            to: null
+        }
     };
     onSearchFilterChange = (event) => {
         //this.setState({query: event.currentTarget.value});
@@ -23,8 +27,15 @@ class FilterMenu extends React.Component {
             type.splice(index, 1);
         }
         this.setState({type: type});
-        this.props.filter(this.state)
+        this.props.filter(this.state);
     };
+    onPriceFilterChange = (event) => {
+        let priceFrom = this.state.price.from;
+        let priceTo = this.state.price.to;
+        priceFrom = event.currentTarget.value;
+        priceTo = event.currentTarget.value;
+        alert(priceFrom + ' ' + priceTo)
+    }
     render() {
         const TYPES = [
             {
@@ -65,8 +76,8 @@ class FilterMenu extends React.Component {
                 <div className="filterContainer_price">
                     <p>Цена</p>
                     <div>
-                        <input type="text" placeholder='от'/>
-                        <input type="text" placeholder='до'/>
+                        <input type="text" placeholder='от' onChange={this.onPriceFilterChange}/>
+                        <input type="text" placeholder='до' onChange={this.onPriceFilterChange}/>
                     </div>
                 </div>
             </div>
