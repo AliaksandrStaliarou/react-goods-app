@@ -43,6 +43,15 @@ class FilterMenu extends React.Component {
             }, () => {
                 this.props.filter(this.state);
             });
+        } else {
+            this.setState({
+                price: {
+                    from: null,
+                    to: this.state.price.to
+                }
+            }, () => {
+                this.props.filter(this.state);
+            });
         }
     };
     onPriceToFilterChange = (event) => {
