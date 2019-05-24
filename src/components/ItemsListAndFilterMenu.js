@@ -30,7 +30,6 @@ class ItemsListAndFilterMenu extends React.Component {
             }
             //let isPriceToMatching = priceTo <= item.priceNum;
 
-
             return isQueryMatching || isTypeMatching || isPriceFromMatching;
         });
         this.setState({filteredData: filteredTypes})
