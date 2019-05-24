@@ -29,13 +29,40 @@ class FilterMenu extends React.Component {
         this.setState({type: type});
         this.props.filter(this.state);
     };
-    onPriceFilterChange = (event) => {
-        let priceFrom = this.state.price.from;
-        let priceTo = this.state.price.to;
-        priceFrom = event.currentTarget.value;
-        priceTo = event.currentTarget.value;
-        alert(priceFrom + ' ' + priceTo)
-    }
+
+
+    onPriceFromFilterChange = (event) => {
+        let priceFrom = event.currentTarget.value;
+        let isNumber = this.isNumeric(priceFrom);
+        if (isNumber === true) {
+            this.setState({
+                price: {
+                    from: parseInt(priceFrom),
+                    to: this.state.price.to
+                }
+            }, () => {
+                this.props.filter(this.state);
+            });
+        }
+    };
+    onPriceToFilterChange = (event) => {
+        let priceTo = event.currentTarget.value;
+        if (priceTo === '') {
+            priceTo = null;
+        }
+        this.setState({
+            price: {
+                from: this.state.price.from,
+                to: parseInt(priceTo)
+            }
+        });
+    };
+
+    //numeric checking
+    isNumeric = (n) => {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    };
+
     render() {
         const TYPES = [
             {
@@ -76,8 +103,8 @@ class FilterMenu extends React.Component {
                 <div className="filterContainer_price">
                     <p>Цена</p>
                     <div>
-                        <input type="text" placeholder='от' onChange={this.onPriceFilterChange}/>
-                        <input type="text" placeholder='до' onChange={this.onPriceFilterChange}/>
+                        <input id="from" type="text" placeholder='от' onChange={this.onPriceFromFilterChange}/>
+                        <input id="to" type="text" placeholder='до' onChange={this.onPriceToFilterChange}/>
                     </div>
                 </div>
             </div>

@@ -13,15 +13,25 @@ class ItemsListAndFilterMenu extends React.Component {
     onFilterChange = (filterData) => {
         let query = filterData.query.toLowerCase();
         let types = filterData.type;
+        let priceFrom = filterData.price.from;
+        let priceTo = filterData.price.to;
 
         let filteredTypes = this.state.data.filter(item => {
-            if (types.length === 0 && query === '') {
+            if (types.length === 0 && query === '' && priceFrom === null) {
                 return true
             }
             let isTypeMatching = types.indexOf(item.type) !== -1;
             let isQueryMatching = query.length > 0 && item.title.toLowerCase().indexOf(query) !== -1;
+            let isPriceFromMatching;
+            if (priceFrom === null) {
+                isPriceFromMatching = false;
+            } else {
+                isPriceFromMatching = item.priceNum >= priceFrom;
+            }
+            //let isPriceToMatching = priceTo <= item.priceNum;
 
-            return isQueryMatching || isTypeMatching;
+
+            return isQueryMatching || isTypeMatching || isPriceFromMatching;
         });
         this.setState({filteredData: filteredTypes})
     };
