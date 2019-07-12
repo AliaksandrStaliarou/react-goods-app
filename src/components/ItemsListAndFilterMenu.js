@@ -16,19 +16,6 @@ class ItemsListAndFilterMenu extends React.Component {
         let priceFrom = filterData.price.from;
         let priceTo = filterData.price.to;
 
-        isTypeMatching = () => {
-            alert('type')
-        };
-
-        isQueryMatching = () => {
-            alert('query')
-        };
-
-        isPriceMatching = () => {
-            alert('price')
-        };
-
-        return isTypeMatching() && isQueryMatching() && isPriceMatching();
 
         /*let filteredTypesQuery, filteredTypesQueryAndPrice, storageOfFilteredTypesAndQuery;
 
@@ -66,8 +53,6 @@ class ItemsListAndFilterMenu extends React.Component {
             });
             this.setState({filteredData: filteredTypesQueryAndPrice})
         }*/
-
-
        /* let filteredTypes = this.state.data.filter(item => {
             if (types.length === 0 && query === '' && priceFrom === null) {
                 return true
@@ -101,7 +86,56 @@ class ItemsListAndFilterMenu extends React.Component {
             })
         }*/
 
+        let isTypeMatching = (item) => {
+            if (types.length === 0) {
+                return true;
+            }
+            return types.indexOf(item.type) !== -1;
+        };
+
+        let isQueryMatching = (item) => {
+            if (query.length === 0) {
+                return true;
+            }
+            return item.title.toLowerCase().indexOf(query) !== -1;
+        };
+
+        /*let isPriceMatching = () => {
+            //alert('price');
+        };*/
+
+        let filteredList = this.state.data.filter(item => {
+            return isTypeMatching(item) && isQueryMatching(item) ;
+        });
+
+        this.setState({filteredData: filteredList});
+
+        /*let filteredTypes = this.state.data.filter(item => {
+           if (types.length === 0) {
+              return true;
+           }
+           return types.indexOf(item.type) !== -1;
+        });
+
+        let filteredQuery = this.state.data.filter(item => {
+            if (query.length === 0) {
+                return true;
+            }
+            return item.title.indexOf(query) !== -1;
+        });
+
+        let filteredList = this.state.data.filter(item => {
+            return filteredTypes && filteredQuery ;
+        });
+
+
+        this.setState({filteredData: filteredList});*/
+
+
     };
+
+
+
 
     render() {
         return (
