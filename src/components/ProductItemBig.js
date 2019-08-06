@@ -5,10 +5,10 @@ class ProductItemBig extends React.Component {
     state = {
         expanded: false,
         class: '',
-    }
+    };
     render() {
-        let available = this.props.data.available
-        let item = this.props.data
+        let available = this.props.data.available;
+        let item = this.props.data;
         return (
             <div className="itemExp">
                 <div className="itemExp_imgAndPrice">
@@ -18,8 +18,8 @@ class ProductItemBig extends React.Component {
                 </div>
                 <div className="itemExp_titleAndDescription">
                     <p onClick={() => {
-                        this.props.condition(this.state.expanded)
-                        this.props.overlaySwitcher(this.state.class)
+                        this.props.condition(this.state.expanded);
+                        this.props.overlaySwitcher(this.state.class);
                     }}>x</p>
                     <p>{item.title}</p>
                     <div>

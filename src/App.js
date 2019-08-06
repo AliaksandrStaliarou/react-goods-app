@@ -7,15 +7,15 @@ import { ItemsListAndFilterMenu } from './components/ItemsListAndFilterMenu'
 class App extends Component {
     state = {
         class: '',
-    }
+    };
     overlaySwitcher = (status) => {
         this.setState({ class: status})
-    }
+    };
     render() {
     return (
         <React.Fragment>
             <Overlay class={this.state.class}/>
-            <ItemsListAndFilterMenu overlaySwitcher={this.overlaySwitcher} data={this.state.data}/>
+            <ItemsListAndFilterMenu overlaySwitcher={this.overlaySwitcher} />
         </React.Fragment>
 
 

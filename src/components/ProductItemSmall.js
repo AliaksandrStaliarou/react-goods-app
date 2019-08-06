@@ -6,13 +6,13 @@ class ProductItemSmall extends React.Component {
     state = {
         expanded: true,
         class: 'overlay',
-    }
+    };
     onClickFromSmallToBig_And_Overlayer = () => {
-        this.props.condition(this.state.expanded)
-        this.props.overlaySwitcher(this.state.class)
-    }
+        this.props.condition(this.state.expanded);
+        this.props.overlaySwitcher(this.state.class);
+    };
     render() {
-        let item = this.props.data
+        let item = this.props.data;
         return(
             <div className="itemContainer">
                 <div className="item" >

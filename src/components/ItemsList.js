@@ -8,9 +8,13 @@ class ItemsList extends React.Component {
         let productList = this.props.data.map(function(item) {
             return <ProductItem key={item.id} data={item} overlaySwitcher={this.props.overlaySwitcher}/>
         }.bind(this));
+
         return(
             <div className="itemsList">
                 {productList}
+               {/* {productList.sort( () => {
+                    return 0.5 - Math.random();
+                })}*/}
             </div>
         )
     }

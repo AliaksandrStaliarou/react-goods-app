@@ -1,8 +1,11 @@
 import React from "react";
+import {SortingMenu} from "./SortingMenu";
 
 
 class FilterMenu extends React.Component {
     state = {
+        sortField: this.props.sortField,
+        sortOrder: this.props.sortOrder,
         query: '',
         type: [],
         price: {
@@ -10,6 +13,8 @@ class FilterMenu extends React.Component {
             to: null
         }
     };
+
+
     onSearchFilterChange = (event) => {
         //this.setState({query: event.currentTarget.value});
         this.setState({
@@ -29,8 +34,6 @@ class FilterMenu extends React.Component {
         this.setState({type: type});
         this.props.filter(this.state);
     };
-
-
     onPriceFromFilterChange = (event) => {
         let priceFrom = event.currentTarget.value;
         let isNumber = this.isNumeric(priceFrom);
@@ -56,15 +59,26 @@ class FilterMenu extends React.Component {
     };
     onPriceToFilterChange = (event) => {
         let priceTo = event.currentTarget.value;
-        if (priceTo === '') {
-            priceTo = null;
+        let isNumber = this.isNumeric(priceTo);
+        if (isNumber === true) {
+           this.setState({
+               price: {
+                   from: this.state.price.from,
+                   to: parseInt(priceTo)
+               }
+           }, () => {
+               this.props.filter(this.state);
+           });
+        } else {
+            this.setState({
+                price: {
+                    from: this.state.price.from,
+                    to: null
+                }
+            }, () => {
+                this.props.filter(this.state);
+            });
         }
-        this.setState({
-            price: {
-                from: this.state.price.from,
-                to: parseInt(priceTo)
-            }
-        });
     };
 
     //numeric checking
