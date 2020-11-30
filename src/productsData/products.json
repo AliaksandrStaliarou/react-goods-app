@@ -6,7 +6,7 @@
     "image": "./images/shirt1_sm.jpg",
     "bigImage": "/images/shirt1_big.jpg",
     "price": "цена: 60 рублей",
-    "priseNum": 60,
+    "priceNum": 60,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": true
   },
@@ -17,7 +17,7 @@
     "image": "./images/shirt2_sm.jpg",
     "bigImage": "./images/shirt2_big.jpg",
     "price": "цена: 86 рублей",
-    "priseNum": 86,
+    "priceNum": 86,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": false
   },
@@ -28,7 +28,7 @@
     "image": "./images/shirt3_sm.jpg",
     "bigImage": "./images/shirt3_big.jpg",
     "price": "цена: 72 рублей",
-    "priseNum": 72,
+    "priceNum": 72,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": true
   },
@@ -39,7 +39,7 @@
     "image": "./images/jeans1_sm.jpg",
     "bigImage": "./images/jeans1_big.jpg",
     "price": "цена: 100 рублей",
-    "priseNum": 100,
+    "priceNum": 100,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": true
   },
@@ -50,7 +50,7 @@
     "image": "./images/jeans2_sm.jpg",
     "bigImage": "./images/jeans2_big.jpg",
     "price": "цена: 120 рублей",
-    "priseNum": 120,
+    "priceNum": 120,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": false
   },
@@ -61,7 +61,7 @@
     "image": "./images/jeans3_sm.jpg",
     "bigImage": "./images/jeans3_big.jpg",
     "price": "цена: 105 рублей",
-    "priseNum": 105,
+    "priceNum": 105,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": false
   },
@@ -72,7 +72,7 @@
     "image": "./images/suit1_sm.jpg",
     "bigImage": "./images/suit1_big.jpg",
     "price": "цена: 320 рублей",
-    "priseNum": 320,
+    "priceNum": 320,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": true
   },
@@ -83,7 +83,7 @@
     "image": "./images/suit2_sm.jpg",
     "bigImage": "./images/suit2_big.jpg",
     "price": "цена: 390 рублей",
-    "priseNum": 390,
+    "priceNum": 390,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": false
   },
@@ -94,7 +94,7 @@
     "image": "./images/suit3_sm.jpg",
     "bigImage": "./images/suit3_big.jpg",
     "price": "цена: 410 рублей",
-    "priseNum": 410,
+    "priceNum": 410,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "available": true
   }

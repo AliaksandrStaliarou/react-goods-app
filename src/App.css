@@ -49,6 +49,42 @@ body {
     font-family: arial, sans-serif;
 }
 
+.sortingMenu {
+    margin: 10px 20.5%;
+    display: flex;
+}
+
+.sortingMenu p {
+    padding-right: 20px;
+}
+
+.sortingMenu li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.sortingMenu li:first-child {
+    border-right: 1px solid #ddd;
+}
+
+.sortingMenu span {
+    border-bottom: 1px dotted;
+    cursor: pointer;
+}
+
+.pinkedDecr,
+.pinkedIncr {
+    color: #ff48a5;
+}
+.pinkedDecr:after {
+    content: '\2193';
+}
+
+.pinkedIncr:after {
+    content: '\2191';
+}
+
 .itemsListAndFilter {
     margin: 20px auto;
     display: flex;
@@ -95,9 +131,20 @@ body {
     width: 40%;
 }
 
+
 .filterContainer input {
     width: 90px;
 }
+
+.searchInput {
+    padding: 10px 0;
+}
+
+.searchInput input {
+    width: 180px;
+    padding: 5px 0;
+}
+
 
 .itemContainer {
     width: 100%;
