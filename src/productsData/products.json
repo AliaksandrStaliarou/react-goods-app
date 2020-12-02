@@ -4,7 +4,7 @@
     "type": "shirt",
     "title": "Рубашка, Envy Lab 123",
     "image": "./images/shirt1_sm.jpg",
-    "bigImage": "/images/shirt1_big.jpg",
+    "bigImage": "./images/shirt1_big.jpg",
     "price": "цена: 60 рублей",
     "priceNum": 60,
     "extraInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
