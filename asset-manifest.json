@@ -1,13 +1,13 @@
 {
-  "main.css": "/React-goods-app/static/css/main.2f18887f.chunk.css",
-  "main.js": "/React-goods-app/static/js/main.f45af86e.chunk.js",
-  "main.js.map": "/React-goods-app/static/js/main.f45af86e.chunk.js.map",
-  "static/js/1.35d49673.chunk.js": "/React-goods-app/static/js/1.35d49673.chunk.js",
-  "static/js/1.35d49673.chunk.js.map": "/React-goods-app/static/js/1.35d49673.chunk.js.map",
-  "runtime~main.js": "/React-goods-app/static/js/runtime~main.71df4a0b.js",
-  "runtime~main.js.map": "/React-goods-app/static/js/runtime~main.71df4a0b.js.map",
-  "static/css/main.2f18887f.chunk.css.map": "/React-goods-app/static/css/main.2f18887f.chunk.css.map",
-  "index.html": "/React-goods-app/index.html",
-  "precache-manifest.88ccbc02a23805276d0a1b8ddf3f5ac2.js": "/React-goods-app/precache-manifest.88ccbc02a23805276d0a1b8ddf3f5ac2.js",
-  "service-worker.js": "/React-goods-app/service-worker.js"
+  "main.css": "/react-goods-app/static/css/main.2f18887f.chunk.css",
+  "main.js": "/react-goods-app/static/js/main.d9418d9b.chunk.js",
+  "main.js.map": "/react-goods-app/static/js/main.d9418d9b.chunk.js.map",
+  "static/js/1.35d49673.chunk.js": "/react-goods-app/static/js/1.35d49673.chunk.js",
+  "static/js/1.35d49673.chunk.js.map": "/react-goods-app/static/js/1.35d49673.chunk.js.map",
+  "runtime~main.js": "/react-goods-app/static/js/runtime~main.3e47e6d1.js",
+  "runtime~main.js.map": "/react-goods-app/static/js/runtime~main.3e47e6d1.js.map",
+  "static/css/main.2f18887f.chunk.css.map": "/react-goods-app/static/css/main.2f18887f.chunk.css.map",
+  "index.html": "/react-goods-app/index.html",
+  "precache-manifest.6504e0c50a8dac0c0f3ebddd705feed5.js": "/react-goods-app/precache-manifest.6504e0c50a8dac0c0f3ebddd705feed5.js",
+  "service-worker.js": "/react-goods-app/service-worker.js"
 }
