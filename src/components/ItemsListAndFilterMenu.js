@@ -55,19 +55,30 @@ class ItemsListAndFilterMenu extends React.Component {
         });
 
 
+        this.applyOrder(filteredList);
+
+    };
+
+    onSortChange(field, order) {
+        this.setState({sortField: field, sortOrder: order}, () => {
+            this.applyOrder();
+        });
+
+    };
+
+    applyOrder(filteredList) {
+        const { sortField, sortOrder } = this.state;
+        if (!filteredList) {
+            filteredList = (this.state.filteredData || this.state.data).slice(); // копируем список, чтобы не отсортировать по ссылке
+        }
+        filteredList.sort((a, b) => { // сортировка по полю
+            if (a[sortField] > b[sortField]) return 1;
+            if (a[sortField] < b[sortField]) return -1;
+            return 0;
+        });
+        if (sortOrder === 'asc') filteredList.reverse();
         this.setState({filteredData: filteredList});
-
-    };
-
-    onSortChange = (field, order) => {
-        this.setState({sortField: field, sortOrder: order})
-    };
-
-    //передача отсортированных товаров(sortedItems) в this.state.filteredData
-    /*transferringSortedDataDecr = (value) => {
-        this.setState({filteredData: value})
-    };*/
-
+    }
 
     render() {
         return (
@@ -75,15 +86,15 @@ class ItemsListAndFilterMenu extends React.Component {
                 <div className="sortingMenu">
                     <p>Сортировать по:</p>
                     <SortingMenu className={this.props.class}
-                                 //filter={this.onFilterChange}
-                                 onSortChange={this.onSortChange}
-                                 //filteredData={this.state.filteredData}
-                                 //transferringSortedDataDecr={this.transferringSortedDataDecr}
+                        //filter={this.onFilterChange}
+                                 sortingChange={this.onSortChange.bind(this)}
+                        //filteredData={this.state.filteredData}
+                        //transferringSortedDataDecr={this.transferringSortedDataDecr}
 
                     />
                 </div>
                 <div className="itemsListAndFilter">
-                    <FilterMenu filter={this.onFilterChange}
+                    <FilterMenu filter={this.onFilterChange.bind(this)}
                                 sortField={this.state.sortField}
                                 sortOrder={this.state.sortOrder}
                     />

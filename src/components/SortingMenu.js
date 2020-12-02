@@ -2,6 +2,7 @@ import React from "react";
 import products from '../productsData/products'
 
 
+/*
 class SortingMenu extends React.Component {
     state = {
         sortField: null,
@@ -18,7 +19,7 @@ class SortingMenu extends React.Component {
             this.props.onSortChange(this.state.sortField, this.state.sortOrder);
         });
 
-       /* let classValue = this.state.sortedClass;
+       /!* let classValue = this.state.sortedClass;
         if (classValue === '') {
             this.setState({sortedClass: 'pinkedDecr'}, () => {
                 this.props.transferringSortedDataDecr(this.state.sortedItems);
@@ -28,7 +29,7 @@ class SortingMenu extends React.Component {
             this.setState({sortedClass: 'pinkedIncr'});
         } else if (classValue === 'pinkedIncr') {
             this.setState({sortedClass: 'pinkedDecr'});
-        }*/
+        }*!/
 
     };
     sortDecr = (a, b) => {
@@ -61,7 +62,61 @@ class SortingMenu extends React.Component {
             )
     }
 
-}
 
+}*/
+
+const SortItemsConfig = [
+    {
+        name: 'цене',
+        sortField: 'priceNum'
+    },
+    {
+        name: 'алфавиту',
+        sortField: 'title'
+    }
+];
+
+
+class SortingMenu extends React.Component {
+    state = {
+        sortField: null,
+        sortOrder: null
+    };
+
+    handleSortChange(sortItem) {
+        let { sortField, sortOrder} = this.state;
+        const hasSortFieldChanged = sortField !== sortItem.sortField;
+        if (hasSortFieldChanged) {
+            sortOrder = 'desc';
+        } else {
+            sortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+        }
+        this.setState({
+            sortField: sortItem.sortField,
+            sortOrder: sortOrder
+        }, () => {
+            this.props.sortingChange(this.state.sortField, this.state.sortOrder);
+        });
+    }
+
+    render() {
+        const { sortField, sortOrder} = this.state;
+        const sortItems = SortItemsConfig.map(
+            (item, index) => {
+                const className = (sortField === item.sortField) ? (sortOrder === 'desc' ? 'pinkedDecr' : 'pinkedIncr') : '';
+                return <li className={className}
+                           key={index.toString()}
+                           onClick={this.handleSortChange.bind(this, item)}
+                ><span>{ item.name }</span></li>
+            }
+        );
+        return (
+            <ul>
+                { sortItems }
+            </ul>
+        )
+    }
+
+}
 
 export { SortingMenu }
